@@ -34,13 +34,14 @@ import (
 // so just return the value.
 // Next we check to see if the value of the index returned in the number we are looking for, then we win.
 // else, just return the value.
-func find(s []int, i int) int {
+func find(s []int, i int, f int) int {
 	//fmt.Printf("Checking is %d in %v\n", i, s)
 	n := sort.SearchInts(s, i)
 	if n == len(s) {
 		return n
 	} else if i == s[n] {
 		fmt.Printf("Found repeating frequency: %d\n", i)
+		fmt.Printf("Found in %d interations!\n", f)
 		os.Exit(0)
 	} else {
 		return n
@@ -93,7 +94,7 @@ func main() {
 		}
 		//fmt.Printf("Adding %d + %d\n", freqslice[freqcount], freq[count])
 		num = num + freq[count]
-		index := find(freqslice, num)
+		index := find(freqslice, num, freqcount)
 		// Since we are using a binary search, we much keep our list in order. Since we have arrived here, we can assume
 		// that we have not found our repeating frequency. We now need to take out number and insert it into the proper index
 		// to keep our list ordered.
