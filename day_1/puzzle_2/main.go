@@ -3,8 +3,8 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"log"
 	"os"
+	"sort"
 	"strconv"
 )
 
@@ -29,23 +29,31 @@ import (
 // +7, +7, -2, -7, -4 first reaches 14 twice.
 // What is the first frequency your device reaches twice?
 
-// Find completes a linear search on the provided slice to find the requested int. Not sure if spending the time to sort the list and use
-// a binary search would be more efficent.
-func find(s *[]int, i int) {
-	// fmt.Printf("Checking is %d in %v\n", i, s)
-	for _, n := range *s {
-		if i == n {
-			fmt.Printf("Found repeating frequency: %d\n", i)
-			os.Exit(0)
-		}
+// Find does a binary search and returns the index in which this value could be placed in the slice.
+// If the value is the size of the array, this means it is larger then all of the numbers in the slice,
+// so just return the value.
+// Next we check to see if the value of the index returned in the number we are looking for, then we win.
+// else, just return the value.
+func find(s []int, i int) int {
+	//fmt.Printf("Checking is %d in %v\n", i, s)
+	n := sort.SearchInts(s, i)
+	if n == len(s) {
+		return n
+	} else if i == s[n] {
+		fmt.Printf("Found repeating frequency: %d\n", i)
+		os.Exit(0)
+	} else {
+		return n
 	}
+
+	return n
 }
 
 func main() {
 	// Lets first grab our solutions input
 	file, err := os.Open("input.txt")
 	if err != nil {
-		log.Fatal(err)
+		fmt.Println(err)
 		os.Exit(1)
 	}
 	defer file.Close()
@@ -60,7 +68,8 @@ func main() {
 	}
 
 	// A slice for the previous frequencies, we use composition to prepopulate the slice with the first 2 pairs added.
-	freqslice := []int{freq[0] + freq[1]}
+	//freqslice := []int{freq[0] + freq[1]}
+	var freqslice []int
 
 	// The puzzle states that we may need to iterate over our numbers multiple times to find the duplicates, so
 	// we state an infinite loop with a counter to track our place. If the current count is longer then the len
@@ -75,18 +84,22 @@ func main() {
 	// 14 + 11 = 25 -> find(25) -> proceed
 	// 25 - 7 = 18 -> find(18) -> proceed
 
-	count := 2 // Since we aready addressed the first pair, we need to start on the third number
 	freqcount := 0
-	for {
+	num := 0
+	for count := 0; count <= len(freq); count++ {
 		// fmt.Printf("Count: %d and len is %d\n", count, len(freq))
-		if count >= len(freq) {
+		if count == len(freq) {
 			count = 0
 		}
 		//fmt.Printf("Adding %d + %d\n", freqslice[freqcount], freq[count])
-		i := freqslice[freqcount] + freq[count]
-		find(&freqslice, i) // Dereferencing here, The size of this slice gets pretty large, super easy optimization here.
-		freqslice = append(freqslice, i)
-		count++
+		num = num + freq[count]
+		index := find(freqslice, num)
+		// Since we are using a binary search, we much keep our list in order. Since we have arrived here, we can assume
+		// that we have not found our repeating frequency. We now need to take out number and insert it into the proper index
+		// to keep our list ordered.
+		freqslice = append(freqslice, 0)             // We must extend the size of the slice to insert a new value.
+		copy(freqslice[index+1:], freqslice[index:]) // We then shift the slice.
+		freqslice[index] = num                       // Adding our new value into the the correct location.
 		freqcount++
 	}
 }
