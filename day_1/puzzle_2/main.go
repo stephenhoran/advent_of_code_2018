@@ -89,14 +89,13 @@ func main() {
 	freqcount := 0
 	num := 0
 	rounds := 0
-	t := time.Now()
 	for count := 0; count <= len(freq); count++ {
+		t := time.Now()
 		// fmt.Printf("Count: %d and len is %d\n", count, len(freq))
 		if count == len(freq) {
 			count = 0
 			rounds++
-			fmt.Printf("%d: %+v\n\n", rounds, time.Since(t))
-			t = time.Now()
+			fmt.Println(time.Since(t))
 		}
 		//fmt.Printf("Adding %d + %d\n", freqslice[freqcount], freq[count])
 		num = num + freq[count]
