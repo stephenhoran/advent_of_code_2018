@@ -13,12 +13,33 @@ To make sure you didn't miss any, you scan the likely candidate boxes again, cou
 For example, if you see the following box IDs:
 
 abcdef contains no letters that appear exactly two or three times.
+
 bababc contains two a and three b, so it counts for both. 
+
 abbcde contains two b, but no letter appears exactly three times. 
+
 abcccd contains three c, but no letter appears exactly two times. 
+
 aabcdd contains two a and two d, but it only counts once. 
+
 abcdee contains two e. 
+
 ababab contains three a and three b, but it only counts once.
+
 Of these box IDs, four of them contain a letter which appears exactly twice, and three of them contain a letter which appears exactly three times. Multiplying these together produces a checksum of 4 * 3 = 12.
 
 What is the checksum for your list of box IDs?
+---
+### Performance Metrics
+Number of twos found: 246
+
+Number of threes found: 24
+
+Your hash is: 5904
+
+
+real    0m0.007s
+
+user    0m0.003s
+
+sys     0m0.004s
