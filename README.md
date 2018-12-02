@@ -11,3 +11,4 @@ Collect stars by solving puzzles. Two puzzles will be made available on each day
 ---
 ### Days:
 - [Day 1: Chronal Calibration](https://github.com/atssteve/advent_of_code_2018/tree/master/day_1) 
+- [Day 2: Inventory Management System](https://github.com/atssteve/advent_of_code_2018/tree/master/day_2)
