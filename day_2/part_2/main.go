@@ -22,6 +22,9 @@ func compareStrings(s string, i []string) {
 			if c != ids[index] { // compare the current index value of our string to the index value of the item presented during this iteration.
 				mismatches++
 			}
+			if mismatches >= 2 { // Micro Optimization, at these point these values now cannot be what we are looking for. Move on.
+				break
+			}
 		}
 		if mismatches == 1 { // This is simple linear comparison and concatination.
 			var common []string
@@ -58,5 +61,4 @@ func main() {
 	for _, i := range inv {
 		compareStrings(i, inv)
 	}
-
 }
