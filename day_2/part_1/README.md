@@ -31,15 +31,12 @@ Of these box IDs, four of them contain a letter which appears exactly twice, and
 What is the checksum for your list of box IDs?
 ---
 ### Performance Metrics
+```
 Number of twos found: 246
-
 Number of threes found: 24
-
 Your hash is: 5904
 
-
 real    0m0.007s
-
 user    0m0.003s
-
 sys     0m0.004s
+```
