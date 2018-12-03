@@ -22,7 +22,7 @@ func compareStrings(s string, i []string) {
 			if c != ids[index] { // compare the current index value of our string to the index value of the item presented during this iteration.
 				mismatches++
 			}
-			if mismatches >= 2 { // Micro Optimization, at these point these values now cannot be what we are looking for. Move on.
+			if mismatches >= 2 { // Micro Optimization, at these point these
 				break
 			}
 		}
