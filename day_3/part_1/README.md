@@ -66,3 +66,8 @@ If the Elves all proceed with their own plans, none of them will have enough fab
 ---
 ### Performance Metrics
 
+3.055957ms
+
+real    0m0.009s
+user    0m0.005s
+sys     0m0.004s
