@@ -8,4 +8,6 @@ What is the ID of the only claim that doesn't overlap?
 ---
 ### Performance Metrics
 
-
+real    0m0.009s
+user    0m0.005s
+sys     0m0.003s
