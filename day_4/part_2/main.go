@@ -1,3 +1,4 @@
+// COMMENTS ARE IN PART 1. This solution was one nested loop, which I feel is self explanitory if you read part 1. Sorry :(
 package main
 
 import (
