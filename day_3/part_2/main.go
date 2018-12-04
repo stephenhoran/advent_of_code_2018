@@ -7,9 +7,11 @@ import (
 	"os"
 	"strconv"
 	"strings"
+	"time"
 )
 
 func main() {
+	t := time.Now()
 	// Lets first grab our solutions input
 	file, err := os.Open("input.txt")
 	if err != nil {
@@ -81,5 +83,7 @@ func main() {
 		fmt.Println(k)
 	Nextiter:
 	}
+
+	fmt.Println(time.Since(t))
 
 }
