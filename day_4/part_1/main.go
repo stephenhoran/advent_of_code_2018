@@ -59,7 +59,8 @@ func find(s []string, x string) bool {
 	return false
 }
 
-func main() {
+// Start begins program
+func Start() {
 	t := time.Now()
 	var events []event
 	// Lets first grab our solutions input
@@ -151,4 +152,8 @@ func main() {
 
 	fmt.Println(time.Since(t))
 
+}
+
+func main() {
+	Start()
 }

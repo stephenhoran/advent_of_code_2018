@@ -1,4 +1,4 @@
-// COMMENTS ARE IN PART 1. This solution was one nested loop, which I feel is self explanitory if you read part 1. Sorry :(
+// COMMENTS ARE IN PART 1. This solution was one nested loop, which I feel is self explanitory if you read part
 package main
 
 import (
@@ -52,8 +52,8 @@ func find(s []string, x string) bool {
 	return false
 }
 
-func main() {
-	t := time.Now()
+//Start launches program
+func Start() (string, int, int) {
 	var events []event
 	// Lets first grab our solutions input
 	file, err := os.Open("input.txt")
@@ -123,8 +123,10 @@ func main() {
 
 	z, _ := strconv.Atoi(foundid)
 
-	fmt.Println(foundid, index, z*index)
+	return foundid, index, z * index
 
-	fmt.Println(time.Since(t))
+}
 
+func main() {
+	fmt.Println(Start())
 }
