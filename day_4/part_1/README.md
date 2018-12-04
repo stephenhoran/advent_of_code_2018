@@ -54,6 +54,11 @@ What is the ID of the guard you chose multiplied by the minute you chose? (In th
 ---
 ### Performance Metrics
 
-real    0m0.009s
-user    0m0.005s
+```
+797 18 14346
+1.357874ms
+
+real    0m0.006s
+user    0m0.003s
 sys     0m0.003s
+```
