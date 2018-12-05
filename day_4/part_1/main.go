@@ -2,7 +2,6 @@ package main
 
 import (
 	"bufio"
-	"fmt"
 	"log"
 	"os"
 	"sort"
@@ -60,8 +59,7 @@ func find(s []string, x string) bool {
 }
 
 // Start begins program
-func Start() {
-	t := time.Now()
+func Start() (string, int, int) {
 	var events []event
 	// Lets first grab our solutions input
 	file, err := os.Open("input.txt")
@@ -148,10 +146,7 @@ func Start() {
 
 	z, _ := strconv.Atoi(foundid)
 
-	fmt.Println(foundid, index, z*index)
-
-	fmt.Println(time.Since(t))
-
+	return foundid, index, z * index
 }
 
 func main() {

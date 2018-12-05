@@ -122,7 +122,6 @@ func Start() (string, int, int) {
 	}
 
 	z, _ := strconv.Atoi(foundid)
-
 	return foundid, index, z * index
 
 }

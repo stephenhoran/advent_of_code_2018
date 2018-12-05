@@ -9,7 +9,8 @@ import (
 	"strings"
 )
 
-func main() {
+// Start begin the program
+func Start() int {
 	// Lets first grab our solutions input
 	file, err := os.Open("input.txt")
 	if err != nil {
@@ -67,5 +68,9 @@ func main() {
 			}
 		}
 	}
-	fmt.Println(count)
+	return count
+}
+
+func main() {
+	fmt.Println(Start())
 }

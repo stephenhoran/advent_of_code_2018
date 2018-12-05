@@ -7,13 +7,12 @@ import (
 	"os"
 	"strconv"
 	"strings"
-	"time"
 )
 
-func main() {
-	t := time.Now()
+// Start begins the program
+func Start() int {
 	// Lets first grab our solutions input
-	file, err := os.Open("input.txt")
+	file, err := os.Open("./input.txt")
 	if err != nil {
 		log.Fatal(err)
 		os.Exit(1)
@@ -80,10 +79,12 @@ func main() {
 				}
 			}
 		}
-		fmt.Println(k)
+		return k
 	Nextiter:
 	}
+	return 0
+}
 
-	fmt.Println(time.Since(t))
-
+func main() {
+	fmt.Println(Start())
 }
