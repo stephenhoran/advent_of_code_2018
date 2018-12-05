@@ -24,5 +24,11 @@ After all possible reactions, the resulting polymer contains 10 units.
 How many units remain after fully reacting the polymer you scanned? (Note: in this puzzle and others, the input is large; if you copy/paste your input, make sure you get the whole thing.)
 
 ### Performance Metrics
+```
+11720
+1.442804ms
 
-
+real    0m0.007s
+user    0m0.003s
+sys     0m0.003s
+```
