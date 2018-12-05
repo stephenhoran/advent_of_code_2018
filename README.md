@@ -13,4 +13,5 @@ Collect stars by solving puzzles. Two puzzles will be made available on each day
 - [Day 1: Chronal Calibration](https://github.com/atssteve/advent_of_code_2018/tree/master/day_1) 
 - [Day 2: Inventory Management System](https://github.com/atssteve/advent_of_code_2018/tree/master/day_2)
 - [Day 3: No Matter How You Slice It](https://github.com/atssteve/advent_of_code_2018/tree/master/day_3)
-- [Day 4:Repose Record](https://github.com/atssteve/advent_of_code_2018/tree/master/day_4)
+- [Day 4: Repose Record](https://github.com/atssteve/advent_of_code_2018/tree/master/day_4)
+- [Day 5: Alchemical Reduction](https://github.com/atssteve/advent_of_code_2018/tree/master/day_5)
