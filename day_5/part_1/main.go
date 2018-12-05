@@ -1,4 +1,3 @@
-// COMMENTS ARE IN PART 1. This solution was one nested loop, which I feel is self explanitory if you read part
 package main
 
 import (
@@ -6,13 +5,13 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"strings"
 	"time"
 	"unicode"
 )
 
 //Start launches program
 func Start() {
+	t := time.Now()
 
 	// Lets first grab our solutions input
 	file, err := os.Open("input.txt")
@@ -25,39 +24,42 @@ func Start() {
 	scan := bufio.NewScanner(file)
 
 	for scan.Scan() {
-		t := time.Now()
 		s := scan.Text()
-		for i := 0; i < len(s)-1; i++ {
-			var sb strings.Builder
-			if unicode.IsUpper(rune(s[i])) {
-				l := unicode.ToLower(rune(s[i]))
-				// if (l == rune(s[i-1])) && (l == rune(s[i+1])) {
-				// 	sb.WriteByte(s[i-1])
-				// 	sb.WriteByte(s[i])
-				// 	sb.WriteByte(s[i+1])
-				// 	s = strings.Replace(s, sb.String(), "", 1)
-				// 	fmt.Println(s)
-				// 	i = i - 3
-				if l == rune(s[i-1]) {
-					sb.WriteByte(s[i-1])
-					sb.WriteByte(s[i])
-					s = strings.Replace(s, sb.String(), "", 1)
-					i = i - 3
-				} else if l == rune(s[i+1]) {
-					sb.WriteByte(s[i])
-					sb.WriteByte(s[i+1])
-					s = strings.Replace(s, sb.String(), "", 1)
-					i = i - 2
+		var z []rune
+		max := 0
+		index := 0
+		for i, r := range s {
+			if i == 0 {
+				z = append(z, r)
+				index++
+				max++
+			} else if (unicode.IsUpper(r) || unicode.IsUpper(z[index-1])) && (unicode.IsLower(r) || unicode.IsLower(z[index-1])) {
+				if unicode.ToLower(r) == unicode.ToLower(z[index-1]) {
+					index--
 				} else {
-					continue
+					if index < max {
+						z[index] = r
+						index++
+					} else {
+						z = append(z, r)
+						index++
+						max++
+					}
+				}
+			} else {
+				if index < max {
+					z[index] = r
+					index++
+				} else {
+					z = append(z, r)
+					index++
+					max++
 				}
 			}
-
 		}
-		fmt.Println(len(s))
-		fmt.Println(time.Since(t))
+		fmt.Println(index)
 	}
-
+	fmt.Println(time.Since(t))
 }
 
 func main() {
