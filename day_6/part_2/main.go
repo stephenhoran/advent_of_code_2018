@@ -9,6 +9,8 @@ import (
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/pkg/profile"
 )
 
 type point struct {
@@ -91,5 +93,9 @@ func Start() {
 }
 
 func main() {
-	Start()
+	defer profile.Start(profile.CPUProfile, profile.ProfilePath(".")).Stop()
+	for i := 0; i < 10; i++ {
+		Start()
+	}
+
 }
