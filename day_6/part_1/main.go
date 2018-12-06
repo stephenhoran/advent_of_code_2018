@@ -90,7 +90,7 @@ func Start() {
 			min := float64(0)
 			dup := false
 			for i, n := range sliceOfPoints {
-				m := math.Abs(float64(x)-n.X) + math.Abs(float64(y)-n.Y)
+				m := manhattenDistance(x, y, n)
 				if i == 0 {
 					min = m
 					continue
