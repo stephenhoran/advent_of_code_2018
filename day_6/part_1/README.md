@@ -52,3 +52,12 @@ In this example, the areas of coordinates A, B, C, and F are infinite - while no
 What is the size of the largest area that isn't infinite?
 
 ### Performance Metrics
+```
+46 {268 235 3569}
+18.856785ms
+
+     100	  18577009 ns/op	   25724 B/op	     126 allocs/op
+PASS
+ok  	github.com/atssteve/advent_of_code_2018/day_6/part_1	1.883s
+Success: Benchmarks passed.
+```
