@@ -84,7 +84,7 @@ func Start() {
 
 	}
 
-	for x := currentGrid.MINY; x <= currentGrid.MAXX; x++ {
+	for x := currentGrid.MINX; x <= currentGrid.MAXX; x++ {
 		for y := currentGrid.MINY; y <= currentGrid.MAXY; y++ {
 			var index int
 			min := float64(0)
