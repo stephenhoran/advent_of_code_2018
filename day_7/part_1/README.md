@@ -39,3 +39,10 @@ So, in this example, the correct order is CABDFE.
 In what order should the steps in your instructions be completed?
 
 ### Performance Metrics
+```
+BHRTWCYSELPUVZAOIJKGMFQDXN
+160.94µs
+   10000            177641 ns/op           35369 B/op        369 allocs/op
+PASS
+ok      github.com/atssteve/advent_of_code_2018/day_7/part_1    1.800s
+```
