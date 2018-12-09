@@ -1,42 +1,45 @@
-## Day 6 - Part 2
+## Day 7 - Part 2
 
---- Part Two ---
-On the other hand, if the coordinates are safe, maybe the best you can do is try to find a region near as many coordinates as possible.
+As you're about to begin construction, four of the Elves offer to help. "The sun will set soon; it'll go faster if we work together." Now, you need to account for multiple people working on steps simultaneously. If multiple steps are available, workers should still begin them in alphabetical order.
 
-For example, suppose you want the sum of the Manhattan distance to all of the coordinates to be less than 32. For each location, add up the distances to all of the given coordinates; if the total of those distances is less than 32, that location is within the desired region. Using the same coordinates as above, the resulting region looks like this:
+Each step takes 60 seconds plus an amount corresponding to its letter: A=1, B=2, C=3, and so on. So, step A takes 60+1=61 seconds, while step Z takes 60+26=86 seconds. No time is required between steps.
+
+To simplify things for the example, however, suppose you only have help from one Elf (a total of two workers) and that each step takes 60 fewer seconds (so that step A takes 1 second and step Z takes 26 seconds). Then, using the same instructions as above, this is how each second would be spent:
 ```
-..........
-.A........
-..........
-...###..C.
-..#D###...
-..###E#...
-.B.###....
-..........
-..........
-........F.
-```
-In particular, consider the highlighted location 4,3 located at the top middle of the region. Its calculation is as follows, where abs() is the absolute value function:
-```
-Distance to coordinate A: abs(4-1) + abs(3-1) =  5
-Distance to coordinate B: abs(4-1) + abs(3-6) =  6
-Distance to coordinate C: abs(4-8) + abs(3-3) =  4
-Distance to coordinate D: abs(4-3) + abs(3-4) =  2
-Distance to coordinate E: abs(4-5) + abs(3-5) =  3
-Distance to coordinate F: abs(4-8) + abs(3-9) = 10
-Total distance: 5 + 6 + 4 + 2 + 3 + 10 = 30
-```
-Because the total distance to all coordinates (30) is less than 32, the location is within the region.
+Second   Worker 1   Worker 2   Done
+   0        C          .        
+   1        C          .        
+   2        C          .        
+   3        A          F       C
+   4        B          F       CA
+   5        B          F       CA
+   6        D          F       CAB
+   7        D          F       CAB
+   8        D          F       CAB
+   9        D          .       CABF
+  10        E          .       CABFD
+  11        E          .       CABFD
+  12        E          .       CABFD
+  13        E          .       CABFD
+  14        E          .       CABFD
+  15        .          .       CABFDE
+  ```
+Each row represents one second of time. The Second column identifies how many seconds have passed as of the beginning of that second. Each worker column shows the step that worker is currently doing (or . if they are idle). The Done column shows completed steps.
 
-This region, which also includes coordinates D and E, has a total size of 16.
+Note that the order of the steps has changed; this is because steps now take time to finish and multiple workers can begin multiple steps simultaneously.
 
-Your actual region will need to be much larger than this example, though, instead including all locations with a total distance of less than 10000.
+In this example, it would take 15 seconds for two workers to complete these steps.
 
-What is the size of the region containing all locations which have a total distance to all given coordinates of less than 10000?
+With 5 workers and the 60+ second step durations described above, how long will it take to complete all of the steps?
 
 ### Performance Metrics
 ```
- 200	   9040214 ns/op	    8287 B/op	     114 allocs/op
+[B H R T W Y Z C S A E L P U V O I M J K F G Q D X N] 959
+12.354228ms
+
+[B H R T W Y Z C S A E L P U V O I M J K F G Q D X N] 0
+131.262µs
+   10000            292048 ns/op           40788 B/op        420 allocs/op
 PASS
-ok  	github.com/atssteve/advent_of_code_2018/day_6/part_2	2.731s
+ok      github.com/atssteve/advent_of_code_2018/day_7/part_2    2.968s
 ```
