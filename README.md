@@ -17,3 +17,4 @@ Collect stars by solving puzzles. Two puzzles will be made available on each day
 - [Day 5: Alchemical Reduction](https://github.com/atssteve/advent_of_code_2018/tree/master/day_5)
 - [Day 6: Chronal Coordinates](https://github.com/atssteve/advent_of_code_2018/tree/master/day_6)
 - [Day 7: The Sum of Its Parts](https://github.com/atssteve/advent_of_code_2018/tree/master/day_7)
+- [Day 8: The Memory Maneuver](https://github.com/atssteve/advent_of_code_2018/tree/master/day_8)
