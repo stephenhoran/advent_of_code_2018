@@ -35,3 +35,7 @@ The first check done on the license file is to simply add up all of the metadata
 What is the sum of all metadata entries?
 
 ### Performance Metrics
+```
+41521
+1.700978ms
+```
