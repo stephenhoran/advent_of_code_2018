@@ -21,5 +21,8 @@ What is the value of the root node?
 ### Performance Metrics
 ```
 19990
-1.111872ms
+928.773µs
+    2000            786521 ns/op         1046787 B/op       1692 allocs/op
+PASS
+ok      github.com/atssteve/advent_of_code_2018/day_8/part_2    1.658s
 ```
