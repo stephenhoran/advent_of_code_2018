@@ -19,3 +19,4 @@ Collect stars by solving puzzles. Two puzzles will be made available on each day
 - [Day 7: The Sum of Its Parts](https://github.com/atssteve/advent_of_code_2018/tree/master/day_7)
 - [Day 8: The Memory Maneuver](https://github.com/atssteve/advent_of_code_2018/tree/master/day_8)
 - [Day 9: Marble Mania](https://github.com/atssteve/advent_of_code_2018/tree/master/day_9)
+- [Day 10: The Stars Align](https://github.com/atssteve/advent_of_code_2018/tree/master/day_10)
