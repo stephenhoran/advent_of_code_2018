@@ -31,6 +31,8 @@ func parseNode(license []int) (int, []int, int) {
 	}
 
 	value := 0
+	// If we have no children we don't need to worry about values being pasted back up the tree.
+	// Lets just grab the values of the metadata and return it back.
 	if children == 0 {
 		for _, m := range licenseData[:metadata] {
 			value += m
@@ -38,10 +40,11 @@ func parseNode(license []int) (int, []int, int) {
 		//fmt.Println(licenseData[:metadata], values)
 		return count, licenseData[metadata:], value
 	}
-	// If metadata is great then zero and in length of metadata. I previous tried to throw away
+	// If metadata item does not reference an index that does not exist(that will remain a zero value), Take that metadata items value
+	// and add it to the overall count.
 	for _, m := range licenseData[:metadata] {
-		if m <= len(values) && m > 0 {
-			value += values[m-1] // Add the previous values
+		if m <= len(values) {
+			value += values[m-1] // Add the item.
 		}
 	}
 
