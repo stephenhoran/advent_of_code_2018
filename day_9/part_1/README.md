@@ -52,3 +52,10 @@ Here are a few more examples:
 What is the winning Elf's score?
 
 ### Performance Metrics
+```
+[127 422748]
+5.608613ms
+     200           6281650 ns/op         2788077 B/op     137011 allocs/op
+PASS
+ok      github.com/atssteve/advent_of_code_2018/day_9/part_1    1.903s
+```
