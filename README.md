@@ -21,3 +21,4 @@ Collect stars by solving puzzles. Two puzzles will be made available on each day
 - [Day 9: Marble Mania](https://github.com/atssteve/advent_of_code_2018/tree/master/day_9)
 - [Day 10: The Stars Align](https://github.com/atssteve/advent_of_code_2018/tree/master/day_10)
 - [Day 11: Chronal Charge](https://github.com/atssteve/advent_of_code_2018/tree/master/day_11)
+- [Day 12: Subterranean Sustainability](https://github.com/atssteve/advent_of_code_2018/tree/master/day_12)
