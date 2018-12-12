@@ -58,3 +58,10 @@ What is the X,Y coordinate of the top-left fuel cell of the 3x3 square with the 
 Your puzzle input is 2187.
 
 ### Performance Metrics
+```
+28 235 85
+8.469709ms
+     200           9009427 ns/op          810988 B/op        311 allocs/op
+PASS
+ok      github.com/atssteve/advent_of_code_2018/day_11/part_1   2.721s
+```
