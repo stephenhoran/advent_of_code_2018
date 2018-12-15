@@ -68,5 +68,8 @@ After 20 generations, what is the sum of the numbers of all pots which contain a
 
 ### Performance Metrics
 ```
-
+66.43119ms
+     100          35586174 ns/op          310244 B/op       4896 allocs/op
+PASS
+ok      github.com/atssteve/advent_of_code_2018/day_12/part_1   3.567s
 ```
